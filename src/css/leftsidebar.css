@@ -1,0 +1,165 @@
+/*사이드바*/
+/* 사이드바 아이콘 스타일 */
+.menu ::before{
+    font-family: 'Material Icons';
+    font-size: 1.5em;
+    float: left;
+    clear: left;
+}
+.menu label::before{ content: '\e5d2'; }
+
+/* 체크박스 폼 요소 감춤 */
+#expand-menu {
+    display: none;
+}
+/* 체크박스 체크 시 메뉴 목록 표시 */
+#expand-menu:checked ~ ul { /* 체크박스 체크되었으면 메뉴 목록 표시 - 반응형 표시용 */
+    /*display: block;*/
+    height: auto;
+}
+/* 사이드바 스타일 */
+.menu {
+    display: block;
+    width: 200px; /* 너비를 원하는 값으로 조절 */
+    background-color: #ffb4b4;
+    color: #9b9dff;
+    border-radius: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: all 0.5s ease;
+    position: fixed;
+    height: 82vh; /* 높이를 원하는 값으로 조절 */
+    bottom: 10px; /* 하단에서의 여백을 조절 */
+    top: 80px; /* 상단에서의 여백을 조절 */
+}
+/* 메뉴 항목 스타일 */
+.menu ul > li > a {
+    display: block;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+}
+/* 메뉴 타이틀 스타일 */
+.menu-insta {
+    display: block;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.menu-mypage{
+    display: block;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    /*padding-top: 10px;*/
+    /*padding-bottom: 10px;*/
+    /*padding-left: 50px;*/
+}
+/* 메뉴 목록 스타일 */
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+/* 메뉴 항목 및 레이블 스타일 */
+.menu a, .menu > label {
+    display: block;
+    height: 25px;
+    padding: 8px;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+}
+/* 메뉴 항목 호버 스타일 */
+.menu a:hover {
+    color: #000;
+}
+.menu ul li:hover, .menu > label:hover {
+    background-color: #fff;
+    color: #000;
+    border-radius: 10px;
+}
+/* 메뉴 항목 텍스트 위치 */
+.menu div {
+    position: absolute;
+    left: 50px;
+    line-height: 1.5;
+    font-size: 0.9em;
+    font-family: 'Noto Sans KR';
+    padding: 0 0 0 20px;
+}
+.menu li:nth-child(6)::after {
+    content: '';
+    display: block;
+    width: 80%;
+    margin: 0 0 10px 20px;
+    border-bottom: 1px solid #fff; /* 원하는 색상 및 두께로 조정하세요 */
+}
+
+.mypageItem{
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: middle; /* 상하로 정중앙에 정렬 */
+}
+/* 서브 메뉴 스타일 */
+.menu ul ul {
+    padding-top: 20px;
+    background-color: #ffb4b4;
+    border-radius: 0 10px 10px 0;
+}
+.menu ul ul li {
+    width: 60%;
+    margin-left: 50px;
+    margin-right: 10px;
+    padding-bottom: 10px;
+    font-family: 'Material Icons';
+    font-size: 0.1em;
+}
+/* 서브 메뉴 항목 스타일 */
+.menu ul ul li a {
+    height: 1px;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* 서브 메뉴 항목 호버 스타일 */
+.menu ul ul li a:hover {
+    color: #000;
+}
+
+.instaImg{
+    margin-top: 25px;
+}
+@media screen and (max-width: 512px) {
+    .menu { /* Styles for screens with width up to 512px */
+        width: 60px; /* 사이드바 가로 길이를 60px로 조정 */
+    }
+
+    .menu ul { /* Hide the menu items */
+        display: none;
+    }
+
+    .menu label::before { /* Show menu icon */
+        display: block;
+    }
+
+    #expand-menu:checked ~ ul { /* Show menu items when checkbox is checked */
+        display: block;
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .menu { /* Styles for screens with width 1024px and above */
+        width: 200px; /* Adjust width as needed */
+    }
+
+    .menu ul { /* Show menu items */
+        display: block;
+    }
+}
+
